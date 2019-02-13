@@ -34,4 +34,4 @@ userAccessor.PipeOne(pipeline, result)
 userAccessor.PipeAll(pipeline, result)
 ```
 
-For detailed usage, please visit []().
+For detailed usage, please visit the [ptoject page](https://fipress.org/project/fipmgo).
