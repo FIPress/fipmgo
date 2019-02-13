@@ -1,7 +1,6 @@
 package fipmgo
 
 import (
-	"fiplog"
 	"fmt"
 	"gopkg.in/mgo.v2/bson"
 	"testing"
@@ -19,7 +18,6 @@ func (test *Test) GetId() interface{} {
 }
 
 func (test *Test) SetId(id interface{}) {
-	fiplog.GetLogger().Info("id:", id)
 	fmt.Println("id:", id)
 	switch rid := id.(type) {
 	case bson.ObjectId:
@@ -107,7 +105,7 @@ func TestGet(t *testing.T) {
 func TestFindAll(t *testing.T) {
 	InitMgoWithAuth("localhost", "test", "dba", "Dcn103@Mongo")
 	var ret []*Test
-	testAccessor.FindAll(bson.M{"age": 3}, &ret)
+	//	testAccessor.FindAll(bson.M{"age": 3}, &ret)
 	for _, r := range ret {
 		t.Log("id:", r.Id)
 		t.Log("name:", r.Name)
